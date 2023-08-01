@@ -1,0 +1,159 @@
+.bubble-map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200vh;
+  overflow: hidden;
+}
+/* ************************************** */
+/* *************State Lable *************** */
+/* ************************************** */
+.state-label-container text {
+  transition: opacity 0.5s linear;
+  font-size: 10px;
+  text-transform: uppercase;
+  fill: #ddd;
+  text-anchor: middle;
+  vertical-align: middle;
+}
+/* ************************************** */
+/* *************Map *************** */
+/* ************************************** */
+.usa-map-container path {
+  fill: #fff;
+  stroke: #ddd;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+/* ************************************** */
+/* *************Circle *************** */
+/* ************************************** */
+.bubbles-container circle {
+  fill: #ffb727;
+  fill-opacity: 0.3;
+  stroke: #ffb727;
+  stroke-opacity: 0.6;
+  pointer-events: none;
+}
+
+#bubble-map-text-chunks {
+  position: absolute;
+  width: 340px;
+  left: 50%;
+  bottom: 40%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+/* ************************************** */
+/* *************Year Label *************** */
+/* ************************************** */
+#bubble-map-text-chunks {
+  position: absolute;
+  width: 340px;
+  left: 50%;
+  bottom: 40%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+#bubble-map-text-chunks.is-active {
+  opacity: 1;
+}
+#bubble-map-text-chunks h4 {
+  font-family: "nyt-franklin", arial, helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 10px;
+}
+/* ************************************** */
+/* *************Text  *************** */
+/* ************************************** */
+.bubble-map-blurb {
+  /*padding-bottom: 50vh;*/
+  max-width: 600px !important;
+  width: calc(100% - 50px);
+  margin: 0 auto;
+  padding: 10px;
+  font-family: "nyt-cheltenham", georgia, "times new roman", times, serif;
+  font-weight: 600;
+  font-size: 1.7em;
+  line-height: 1.4em;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8), 1px -1px 2px rgba(255, 255, 255, 0.8), -1px 1px 2px rgba(255, 255, 255, 0.8), -1px -1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.bubble-map-blurb {
+  opacity: 0;
+  transition: opacity 0.25s linear;
+  
+}
+.bubble-map-blurb.is-visible {
+  opacity: 1;
+}
+
+#bubble-map-blurbs {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+}
+
+.bubble-map-wrapper #bubble-map-blurbs .bloomberg-money-sig {
+  background: #FADE91;
+  border-radius: 50%;
+  border: 1px solid #FFB727;
+  width: 80px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+.bubble-map-wrapper #bubble-map-blurbs .bubble-map-blurb {
+  position: absolute;
+  left: 50%;
+  top: 60px;
+  transform: translate(-50%, 0);
+}
+
+/* ************************************** */
+/* *************Scroll Prompt at the bottom*************** */
+/* ************************************** */
+@keyframes bouncy {
+  0% {
+    bottom: 40px;
+  }
+  100% {
+    bottom: 50px;
+  }
+}
+#scroll-prompt {
+  position: fixed;
+  left: 50%;
+  bottom: 40px;
+  font-size: 15px;
+  font-family: "nyt-franklin", arial, helvetica, sans-serif;
+  font-weight: 500;
+  transform: translate(-50%, 0%);
+  color: rgba(0, 0, 0, 0.6);
+  animation-name: bouncy;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+#scroll-prompt:after {
+  content: " ";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  top: calc(100% + 5px);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(0, 0, 0, 0.4);
+}

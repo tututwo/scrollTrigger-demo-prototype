@@ -1,0 +1,81 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Bubble Map Demo</title>
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://unpkg.com/topojson@3"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <body>
+    <div class="bubble-map-wrapper" class="chart-container">
+      <div id="bubble-map">
+        <!------------------------------------------->
+        <!---------------Actual Chart----------------->
+        <!------------------------------------------->
+        <svg width="100vw" height="100vh">
+          <g class="chart">
+            <g class="usa-map-container"></g>
+            <g class="state-label-container"></g>
+            <g class="bubbles-container"></g>
+            <g class="city-name-and-dot"></g>
+          </g>
+        </svg>
+
+        <!------------------------------------------->
+        <!---------------Floating text box---------------->
+        <!------------------------------------------->
+        <div id="bubble-map-blurbs">
+          <p class="bubble-map-blurb bubble-map-blurb-0 is-visible">
+            <img
+              class="bloomberg-money-sig"
+              src="https://static01.nyt.com/newsgraphics/2020/01/07/bloomberg-spending/e291ba73e43ad03b9e5f1ca93851cd8460a85897/bloomberg.png"
+            />
+            Michael R. Bloomberg has poured billions of dollars into efforts
+            that advance his philanthropic and political causes.
+          </p>
+          <p class="bubble-map-blurb bubble-map-blurb-1">
+            <img
+              class="bloomberg-money-sig"
+              src="https://static01.nyt.com/newsgraphics/2020/01/07/bloomberg-spending/e291ba73e43ad03b9e5f1ca93851cd8460a85897/bloomberg.png"
+            />
+            His spending was initially focused in New York and a handful of
+            cities on the East Coast.
+          </p>
+          <p class="bubble-map-blurb bubble-map-blurb-2">
+            <img
+              class="bloomberg-money-sig"
+              src="https://static01.nyt.com/newsgraphics/2020/01/07/bloomberg-spending/e291ba73e43ad03b9e5f1ca93851cd8460a85897/bloomberg.png"
+            />
+            But over the years, it has expanded across the country, along with
+            his influence.
+          </p>
+          <p class="bubble-map-blurb bubble-map-blurb-3">
+            <img
+              class="bloomberg-money-sig"
+              src="https://static01.nyt.com/newsgraphics/2020/01/07/bloomberg-spending/e291ba73e43ad03b9e5f1ca93851cd8460a85897/bloomberg.png"
+            />
+            This is just a fraction of his giving, based on what The Times could
+            gather from public disclosures.
+          </p>
+        </div>
+
+        <!---------------Year---------------->
+        <div id="bubble-map-text-chunks">
+          <h4></h4>
+        </div>
+      </div>
+      <div id="scroll-prompt">Scroll</div>
+    </div>
+  </body>
+
+  <script type="module" src="./chart/map.js"></script>
+  <script type="module" src="./peripherals/stateLabel.js"></script>
+  <!-- <script type="module" src="./chart/bubbleChart.js"></script> -->
+  <!-- <script type="module" src="./peripherals/textChunk.js"></script> -->
+  <!-- <script type="module" src="./peripherals/textChunkShorterCode.js"></script> -->
+</html>
